@@ -9,13 +9,22 @@ function App() {
   const todoNameRef = useRef();
 
   useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (storedTodos) setTodos(storedTodos);
+    const storedTodos = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    }
   }, []);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
+
+  function toggleTodo(id) {
+    const newTodos = [...todos];
+    const todo = newTodos.find((todo) => todo.id === id);
+    todo.complete = !todo.complete;
+    setTodos(newTodos);
+  }
 
   function handleAddTodo(e) {
     const name = todoNameRef.current.value;
@@ -28,7 +37,10 @@ function App() {
 
   return (
     <>
-      <TodoList todos={todos} />
+      <TodoList
+        todos={todos}
+        toggleTodo={toggleTodo}
+      />
       <input
         ref={todoNameRef}
         type="text"
