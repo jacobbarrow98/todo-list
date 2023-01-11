@@ -43,7 +43,6 @@ function App() {
   return (
     <div className="app">
       <TodoList
-        className="todoList"
         todos={todos}
         toggleTodo={toggleTodo}
       />
