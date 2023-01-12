@@ -1,0 +1,48 @@
+.app {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #3c6255;
+  height: 500px;
+}
+
+.todo-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-box input {
+  height: 25px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.input-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-button button {
+  height: 35px;
+  width: 200px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #61876e;
+  color: #fff;
+}
+h2 {
+  color: #fff;
+}
